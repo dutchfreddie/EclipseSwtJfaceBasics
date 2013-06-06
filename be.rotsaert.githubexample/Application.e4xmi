@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_Ak7P0M6TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.ide.application">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_Ak7P0c6TEeK_Prs5hhyMhg" label="be.rotsaert.githubexample" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_G2Fr4M6TEeK_Prs5hhyMhg" elementId="be.rotsaert.githubexample.perspectivestack.0">
+      <children xsi:type="advanced:Perspective" xmi:id="_I2nZMM6TEeK_Prs5hhyMhg" elementId="be.rotsaert.githubexample.perspective.0">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_Kp-NMM6TEeK_Prs5hhyMhg" elementId="be.rotsaert.githubexample.partsashcontainer.0">
+          <children xsi:type="basic:PartStack" xmi:id="_MJVHIM6TEeK_Prs5hhyMhg" elementId="be.rotsaert.githubexample.partstack.0" containerData="">
+            <children xsi:type="basic:Part" xmi:id="_MuykoM6TEeK_Prs5hhyMhg" elementId="be.rotsaert.githubexample.part.0" containerData="20" contributionURI="bundleclass://be.rotsaert.githubexample/be.rotsaert.githubexample.Part1View" label="Part2"/>
+            <children xsi:type="basic:Part" xmi:id="_NmoLkM6TEeK_Prs5hhyMhg" elementId="be.rotsaert.githubexample.part.1" containerData="80" contributionURI="bundleclass://be.rotsaert.githubexample/be.rotsaert.githubexample.Part2View" label="Part1"/>
+          </children>
+        </children>
+      </children>
+    </children>
+  </children>
+  <addons xmi:id="_Ak7P0s6TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_Ak7P086TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_Ak7P1M6TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_Ak7P1c6TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_Ak7P1s6TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_Ak7P186TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_Ak7P2M6TEeK_Prs5hhyMhg" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
