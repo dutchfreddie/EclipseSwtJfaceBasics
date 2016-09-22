@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="simplejfacetable.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Simple JFaceTable Example"
+            class="simplejfacetable.Perspective"
+            id="SimpleJFaceTable.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="simplejfacetable.views.JFaceListView"
+            id="SimpleJFaceTable.views.jfacelistview"
+            name="JFaceListView"
+            restorable="true">
+      </view>
+      <view
+            class="simplejfacetable.views.JFaceTableView"
+            id="SimpleJFaceTable.views.jfacetableview"
+            name="JFaceTableView"
+            restorable="true">
+      </view>
+      <view
+            class="simplejfacetable.views.JFastListViewReceiver"
+            id="SimpleJFaceTable.views.jfacelistviewreceiver"
+            name="ListViewReceiver"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="SimpleJFaceTable.views.jfacelistview"
+               minimized="false"
+               ratio="0.5f"
+               relationship="stack"
+               relative="org.eclipse.ui.editorss">
+         </view>
+         <view
+               id="SimpleJFaceTable.views.jfacetableview"
+               minimized="false"
+               ratio="0.5f"
+               relationship="stack"
+               relative="SimpleJFaceTable.views.jfacelistview"
+               showTitle="true">
+         </view>
+         <view
+               id="SimpleJFaceTable.views.jfacelistviewreceiver"
+               minimized="false"
+               ratio="0.5f"
+               relationship="bottom"
+               relative="SimpleJFaceTable.views.jfacelistview">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

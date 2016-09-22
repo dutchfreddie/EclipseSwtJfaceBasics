@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="org.condast.admin.application"
+         name="Condast Admin"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.condast.admin.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="org.condast.admin.Perspective"
+            id="org.condast.admin.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="org.condast.admin.View"
+            id="org.condast.admin.view">
+      </view>
+      <view
+            class="org.eclipse.ui.navigator.CommonNavigator"
+            icon="resources/spreadsheet.png"
+            id="org.condast.admin.navigator"
+            name="Admin Navigator">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               standalone="true"
+               minimized="false"
+               relative="org.eclipse.ui.editorss"
+               relationship="left"
+               id="org.condast.admin.view">
+         </view>
+         <view
+               closeable="true"
+               id="org.condast.admin.navigator"
+               minimized="false"
+               moveable="true"
+               relationship="left"
+               showTitle="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               id="org.condast.admin.navigator"
+               ratio="0.5"
+               relationship="stack"
+               relative="org.eclipse.ui.navigator.ProjectExplorer">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         id="product"
+         name="Condast Financial Administration"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.condast.admin.application"
+            name="Condast Admin helper">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="org.condast.admin.fiscalyear.new"
+         name="New Fiscal Year"
+         point="org.eclipse.ui.commands">
+      <category
+            description="Commands related to managing the fiscal year"
+            id="org.condast.admin.category.fiscal"
+            name="Fiscal Year Category">
+      </category>
+      <command
+            categoryId="org.condast.admin.category.fiscal"
+            defaultHandler="org.condast.admin.fiscalyear.NewFiscalYearHandler"
+            description="Creates a new Fiscal Year"
+            id="org.condast.admin.command.fiscalyear.new"
+            name="New Fiscal Year">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               icon="resources/greenball.jpg"
+               id="org.condast.admin.fiscalyear"
+               label="Condast Admin"
+               mnemonic="f"
+               tooltip="Manages the new fiscal year">
+            <command
+                  commandId="org.condast.admin.command.fiscalyear.new"
+                  label="New Fiscal Year"
+                  mnemonic="f"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         id="org.condast.admin.builder"
+         name="Condast Admin Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.condast.admin.project.AdminProjectBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.condast.admin.category"
+            name="Condast Admin">
+      </category>
+      <wizard
+            category="org.condast.admin.category"
+            class="org.condast.admin.project.newproject.NewProjectWizard"
+            icon="resources/document-new.png"
+            id="org.condast.admin.wizard.new.project"
+            name="New Condast Admin Project">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerActionBinding
+            viewerId="org.condast.admin.navigator">
+         <includes>
+            <actionExtension
+                  pattern="org.eclipse.ui.navigator.resources.*">
+            </actionExtension>
+         </includes>
+      </viewerActionBinding>
+      <viewerContentBinding
+            viewerId="org.condast.admin.navigator">
+         <includes>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resourceContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.filters.*">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.linkHelper">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.workingSets">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+   <extension
+         id="org.condast.admin.nature"
+         name="Condast Adfmin Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.condast.admin.project.ProjectNature">
+         </run>
+      </runtime>
+   </extension>
+
+</plugin>
